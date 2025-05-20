@@ -1,5 +1,44 @@
+"use client";
+import { useState } from "react";
 import styles from "./Contact.module.css";
-export default function Contact() {
+
+export type Payload = {
+  name: string;
+  email: string;
+  company: string;
+  phone: string;
+  message: string;
+};
+
+interface Props {
+  onSubmit: (form: Payload) => void;
+}
+
+export default function Contact({ onSubmit }: Props) {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    company: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit(form);
+    setForm({ name: "", email: "", company: "", phone: "", message: "" });
+  };
+
   return (
     <section id="contact" className={styles.contact}>
       <div className="container">
@@ -8,13 +47,15 @@ export default function Contact() {
 
         <div className={styles["contact-container"]}>
           <div className={styles["contact-form"]}>
-            <form id="form">
+            <form onSubmit={handleSubmit}>
               <div className={styles["form-group"]}>
                 <label htmlFor="name">Name*</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
+                  value={form.name}
+                  onChange={handleChange}
                   className={styles["form-control"]}
                   placeholder="Your Name"
                   required
@@ -26,6 +67,8 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
+                  value={form.email}
+                  onChange={handleChange}
                   className={styles["form-control"]}
                   placeholder="your@email.com"
                   required
@@ -37,6 +80,8 @@ export default function Contact() {
                   type="text"
                   id="company"
                   name="company"
+                  value={form.company}
+                  onChange={handleChange}
                   className={styles["form-control"]}
                   placeholder="Example Co."
                   required
@@ -48,6 +93,8 @@ export default function Contact() {
                   type="tel"
                   id="phone"
                   name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
                   className={styles["form-control"]}
                   placeholder="(555) 123-4567"
                 />
@@ -57,6 +104,8 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
+                  value={form.message}
+                  onChange={handleChange}
                   className={styles["form-control"]}
                   rows={5}
                   placeholder="Tell us about your space or any questions you have..."

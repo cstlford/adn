@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ADN Project
 
-## Getting Started
+A modern web application built with Next.js 15, React 19, and TypeScript.
 
-First, run the development server:
+## 🚀 Features
+
+- Built with Next.js 15.3.2
+- React 19 for modern UI components
+- TypeScript for type safety
+- Email functionality with Nodemailer
+- Swiper for interactive carousels
+- ESLint for code quality
+- Turbopack for faster development
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- Node.js (Latest LTS version recommended)
+- npm or yarn package manager
+
+## 🛠️ Installation
+
+1. Clone the repository:
+
+```bash
+git clone [your-repository-url]
+cd adn
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+## 🏃‍♂️ Running the Application
+
+### Development Mode
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the development server with Turbopack enabled at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+# or
+yarn build
+yarn start
+```
 
-## Learn More
+### Linting
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+# or
+yarn lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏗️ Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+adn/
+├── app/                # Next.js app directory
+│   ├── api/           # API routes
+│   ├── components/    # React components
+│   ├── layout.tsx     # Root layout
+│   └── page.tsx       # Home page
+├── public/            # Static assets
+├── .next/            # Next.js build output
+└── package.json      # Project dependencies and scripts
+```
 
-## Deploy on Vercel
+## 🛠️ Built With
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js](https://nextjs.org/) - The React framework
+- [React](https://reactjs.org/) - UI library
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Nodemailer](https://nodemailer.com/) - Email functionality
+- [Swiper](https://swiperjs.com/) - Touch slider
+- [ESLint](https://eslint.org/) - Code linting
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 License
+
+This project is private and proprietary.
+
+## 👥 Contributing
+
+This is a private project. Please contact the repository owner for contribution guidelines.

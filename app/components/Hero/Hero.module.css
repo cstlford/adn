@@ -2,8 +2,10 @@
   background: url("/charlotte.png") center/cover no-repeat;
   background-attachment: fixed;
   text-align: center;
-  padding: 120px 0;
+  padding: 80px 20px;
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .hero::before {
@@ -21,9 +23,50 @@
 .hero .container {
   position: relative;
   z-index: 2;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: var(--pale-teal);
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 15px;
+    background-attachment: scroll;
+  }
+
+  .btnContainer {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 10px;
+  }
+
+  .hero p {
+    margin-bottom: 1rem;
+  }
 }

@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Poppins } from "next/font/google";
 
-export const inter = Inter({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
 
-export const poppins = Poppins({
+const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
   display: "swap",
@@ -30,7 +30,9 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body>{children}</body>
+      <body className={`${inter.variable} ${poppins.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,4 +1,22 @@
-.offering .container {
-  height: 50vh;
+.offering {
+  padding: 60px 32px;
   width: 100vw;
+}
+
+.container {
+  height: fit-content;
+  width: 100%;
+  text-align: center;
+
+  position: relative;
+}
+
+.container span {
+  color: var(--accent);
+}
+
+@media screen and (width < 670px) {
+  .offering {
+    padding: 60px 16px;
+  }
 }

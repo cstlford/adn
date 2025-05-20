@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./Locations.module.css";
 
 const locations = [
@@ -10,18 +11,25 @@ const locations = [
 ];
 
 export default function Locations() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
     <section id="locations" className={styles.locations}>
-      <div className="container">
-        <h2>Place a Vending Machine at Your...</h2>
-        <div className={styles["location-cards"]}>
-          {locations.map((loc, index) => (
-            <div key={index} className={styles["location-card"]}>
-              <h3>{loc.h3}</h3>
-              <h3>✔</h3>
-            </div>
-          ))}
-        </div>
+      <h2 className={styles.title}>Place a Vending Machine at Your...</h2>
+      <div className={styles["location-cards"]}>
+        {locations.map((loc, i) => (
+          <div
+            key={i}
+            className={`${styles["location-card"]} ${
+              hoveredIndex === i ? styles.active : ""
+            }`}
+            onMouseEnter={() => setHoveredIndex(i)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <h3>{loc.h3}</h3>
+            <div className={styles.checkmark}>✔</div>
+          </div>
+        ))}
       </div>
     </section>
   );

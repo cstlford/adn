@@ -41,3 +41,9 @@
   color: var(--light-teal);
   border-bottom: 2px solid var(--teal);
 }
+
+@media screen and (width < 670px) {
+  .navLinks {
+    display: none;
+  }
+}

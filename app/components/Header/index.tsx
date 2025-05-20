@@ -1,16 +1,17 @@
 import styles from "./Header.module.css";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <nav>
-        <a href="/" aria-label="Homepage">
+        <Link href="/" aria-label="Homepage">
           <img src="/logo_inverted.png" alt="" />
-        </a>
+        </Link>
         <div className={styles.navLinks}>
-          <a href="#offering">Services</a>
-          <a href="#features">Features</a>
-          <a href="#contact">Contact</a>
+          <Link href="#offering">Services</Link>
+          <Link href="#features">Features</Link>
+          <Link href="#contact">Contact</Link>
         </div>
       </nav>
     </header>

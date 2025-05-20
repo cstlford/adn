@@ -5,10 +5,6 @@
 
 .swiper-slide {
   text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,85 +17,187 @@
   object-fit: cover;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.swiperContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 40px 0;
+
+  max-width: 100%;
   overflow: hidden;
 }
 
-.imgContainer {
+.swiper-card {
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+  padding: 20px;
+  background: linear-gradient(145deg, var(--dark-charcoal), var(--off-black));
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  margin: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  background-color: #f3f4f6;
+  height: 4px;
+  background: linear-gradient(90deg, var(--teal), var(--accent));
+  border-radius: 4px 4px 0 0;
+}
+
+/* Image container styling */
+.imgContainer {
+  flex: 0 0 45%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  position: relative;
+  height: 100%;
+}
+
+.imgContainer::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent),
+    transparent
+  );
 }
 
 .imgContainer img {
-  width: 100%;
-  height: 16rem;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  transition: transform 0.5s ease;
+}
+
+.swiper-card:hover .imgContainer img {
+  transform: translateY(-10px) scale(1.02);
 }
 
 .info {
-  width: 100%;
-  padding: 1.5rem;
+  flex: 0 0 55%;
+  padding: 0 30px;
+  color: var(--silver);
 }
 
 .info h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 0.75rem;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--white);
+  position: relative;
+  padding-bottom: 12px;
 }
 
 .info p {
-  color: #4b5563;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--pale-teal);
 }
 
-.priceContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--accent) !important;
+  background-color: rgba(18, 18, 18, 0.7);
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  backdrop-filter: blur(2px);
 }
 
-.price {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #4f46e5;
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px !important;
+  font-weight: bold;
 }
 
-.button {
-  background-color: #4f46e5;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  transition: background-color 0.2s;
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: var(--teal);
+  color: var(--white) !important;
 }
 
-.button:hover {
-  background-color: #4338ca;
+/* Custom Swiper pagination styles */
+.swiper-pagination-fraction {
+  bottom: 10px !important;
+  color: var(--white);
+  background-color: rgba(18, 18, 18, 0.6);
+  width: auto !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  backdrop-filter: blur(2px);
 }
 
-/* Media query for tablet and desktop */
-@media (min-width: 768px) {
-  .card {
-    flex-direction: row;
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .swiper-card {
+    flex-direction: column;
+    text-align: center;
+    min-height: auto;
+    padding: 30px 20px;
+  }
+
+  .imgContainer,
+  .info {
+    flex: 0 0 100%;
+    padding: 15px;
+  }
+
+  .imgContainer::after {
+    display: none;
   }
 
   .imgContainer {
-    width: 33.333333%;
+    margin-bottom: 20px;
   }
 
-  .imgContainer img {
-    height: 100%;
+  .info h2::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .info {
-    width: 66.666667%;
+  .info p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    margin: 10px;
+    padding: 20px 15px;
+  }
+
+  .info h2 {
+    font-size: 1.5rem;
+  }
+
+  .info p {
+    font-size: 0.9rem;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 35px !important;
+    height: 35px !important;
   }
 }

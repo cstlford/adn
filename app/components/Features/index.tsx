@@ -16,11 +16,13 @@ export default function Features() {
     <section id="features" className={styles.features}>
       <div className="container">
         <div className={styles.intro}>
-          <h2>Why Choose ADN Vending</h2>
+          <h2>
+            Why Choose <span>ADN Vending</span>?
+          </h2>
           <p>
-            We're a local provider offering professional, hands-free vending
+            {`We're a local provider offering professional, hands-free vending
             services with full transparency. You provide the space – we handle
-            the rest.
+            the rest.`}
           </p>
         </div>
         <div className={styles["feature-grid"]}>

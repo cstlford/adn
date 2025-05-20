@@ -5,7 +5,10 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <p>&copy; 2025 ADN Vending. All rights reserved.</p>
-        <p>Contact: adam@adnvending.org</p>
+        <p>Serving Charlotte, NC and the surrounding area</p>
+        <p>
+          Contact: <a href="mailto:adam@adnvending.org">adam@adnvending.org</a>
+        </p>
       </div>
     </footer>
   );
