@@ -1,6 +1,6 @@
 .locations {
   padding: 60px 32px;
-  background: linear-gradient(180deg, var(--gunmetal), var(--off-black));
+  background: linear-gradient(180deg, var(--off-black), var(--gunmetal));
 }
 
 .title {

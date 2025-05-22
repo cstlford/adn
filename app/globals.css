@@ -3,6 +3,7 @@
   --off-black: #1e1e1e;
   --gunmetal: #263238;
   --deep-teal: #00616e;
+  --deeper-teal: #00444d;
   --teal: #009688;
   --light-teal: #4db6ac;
   --pale-teal: #b2dfdb;
@@ -50,7 +51,7 @@ h2 {
   margin-bottom: 1.5rem;
 }
 span {
-  font-weight: 600;
+  font-weight: bold;
 }
 
 h3 {

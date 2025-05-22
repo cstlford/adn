@@ -1,20 +1,9 @@
 .offering {
   padding: 60px 32px;
   width: 100vw;
-  background: linear-gradient(180deg, var(--deep-teal), var(--dark-charcoal));
-  /* border-top: 3px solid var(--dark-charcoal); */
+  background: linear-gradient(180deg, var(--deeper-teal), var(--off-black));
   position: relative;
 }
-
-/* .offering::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--teal), var(--accent));
-} */
 
 .container {
   height: fit-content;

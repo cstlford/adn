@@ -1,6 +1,7 @@
 /* Features Section */
 .features {
   background-color: var(--off-black);
+  background: linear-gradient(180deg, var(--gunmetal), var(--off-black));
   padding: 60px 0;
 }
 

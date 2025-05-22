@@ -1,6 +1,7 @@
 .comparison {
   padding: 60px 32px;
-  background: linear-gradient(180deg, var(--dark-charcoal), var(--gunmetal));
+  /* background: linear-gradient(180deg, var(--off-black), var(--gunmetal)); */
+  background: var(--off-black);
 }
 
 .machines {

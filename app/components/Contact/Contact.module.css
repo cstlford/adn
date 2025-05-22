@@ -1,6 +1,6 @@
 /* Contact Section */
 .contact {
-  background: linear-gradient(180deg, var(--off-black), var(--deep-teal));
+  background: linear-gradient(180deg, var(--off-black) 5%, var(--deeper-teal));
   text-align: center;
 }
 
