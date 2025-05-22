@@ -1,7 +1,7 @@
 /* Contact Section */
 .contact {
-  background: linear-gradient(180deg, var(--off-black) 5%, var(--deeper-teal));
   text-align: center;
+  padding-bottom: 60px;
 }
 
 .contact-container {
@@ -10,7 +10,6 @@
   gap: 40px;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 40px;
 }
 
 .contact-form {
@@ -66,4 +65,26 @@
 
 .contact-method h3 {
   margin-bottom: 10px;
+}
+
+.animatedSpan {
+  position: relative;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.animatedSpan::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: var(--accent);
+  transition: width 2s ease;
+  border-radius: 2px;
+}
+
+.underlineVisible::after {
+  width: 100%;
 }

@@ -10,6 +10,7 @@
   --silver: #e0e0e0;
   --white: #ffffff;
   --accent: #fba858;
+  --light-accent: #ffe066;
 }
 
 * {
@@ -60,7 +61,7 @@ h3 {
 }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 32px;
 }
 
 a {
@@ -80,7 +81,7 @@ a:hover {
 }
 
 section {
-  padding: 60px 0;
+  padding: 30px 32px 30px 32px;
 }
 
 .cta-button {
@@ -109,7 +110,7 @@ section {
 }
 
 .accent-button:hover {
-  background-color: #ffe066;
+  background-color: var(--light-accent);
   color: var(--dark-charcoal);
 }
 
@@ -119,6 +120,6 @@ section {
   }
 
   section {
-    padding: 60px 0;
+    padding: 30px 16px 30px 16px;
   }
 }

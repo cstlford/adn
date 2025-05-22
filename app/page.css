@@ -1,0 +1,10 @@
+main {
+  background: linear-gradient(
+    180deg,
+    var(--off-black) 13%,
+    var(--deeper-teal) 25%,
+    var(--gunmetal) 45%,
+    var(--off-black) 65%,
+    var(--deeper-teal) 100%
+  );
+}

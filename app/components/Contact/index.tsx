@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Contact.module.css";
 
 export type Payload = {
@@ -39,10 +39,44 @@ export default function Contact({ onSubmit }: Props) {
     setForm({ name: "", email: "", company: "", phone: "", message: "" });
   };
 
+  const [isInView, setIsInView] = useState(false);
+  const headingRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          // Stop observing after animation triggers
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.6, // Trigger when 60% of heading is visible
+        rootMargin: "0px 0px -20px 0px",
+      }
+    );
+
+    if (headingRef.current) {
+      observer.observe(headingRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="contact" className={styles.contact}>
       <div className="container">
-        <h2>Get in Touch</h2>
+        <h2 ref={headingRef}>
+          Get in{" "}
+          <span
+            className={`${styles.animatedSpan} ${
+              isInView ? styles.underlineVisible : ""
+            }`}
+          >
+            Touch
+          </span>
+        </h2>
         <p>Ready to transform your vending experience? Contact us today.</p>
 
         <div className={styles["contact-container"]}>

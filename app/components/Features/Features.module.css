@@ -1,14 +1,9 @@
 /* Features Section */
-.features {
-  background-color: var(--off-black);
-  background: linear-gradient(180deg, var(--gunmetal), var(--off-black));
-  padding: 60px 0;
-}
 
 .features .intro {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 60px auto;
+  margin: 0 auto 0 auto;
 }
 
 .intro span {
@@ -24,7 +19,6 @@
   justify-content: center;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
 }
 
 .feature-item {
@@ -46,7 +40,6 @@
 
 .feature-item h3 {
   color: white;
-  margin-bottom: 15px;
 }
 
 .feature-icon {

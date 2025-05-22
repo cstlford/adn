@@ -1,0 +1,91 @@
+.card {
+  background: linear-gradient(-45deg, var(--dark-charcoal), var(--off-black));
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 16px;
+  justify-content: space-between;
+  max-width: 600px;
+  justify-self: center;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.image {
+  /* Use clamp() for smooth scaling between breakpoints */
+  width: clamp(120px, 50%, 400px);
+  min-width: 120px; /* Prevent image from getting too small */
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  flex-shrink: 0; /* Prevent image from shrinking beyond its width */
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Allow text to wrap properly */
+}
+
+.title {
+  margin-bottom: 1rem;
+  color: white;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: white;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  line-height: 1.4;
+}
+
+.feature span {
+  word-break: break-word; /* Ensure long text wraps properly */
+}
+
+/* Tablet adjustments */
+@media screen and (max-width: 900px) {
+  .card {
+    gap: 14px;
+    padding: 14px;
+  }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 700px) {
+  .card {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .feature {
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+}
+
+/* Very small screens */
+@media screen and (max-width: 500px) {
+  .image {
+    width: clamp(100px, 35%, 150px);
+    min-width: 100px;
+  }
+
+  .card {
+    gap: 10px;
+    padding: 10px;
+  }
+}
