@@ -1,13 +1,25 @@
 import styles from "./Features.module.css";
 
 const features = [
-  { h3: "Free Machine Installation", src: "/move.svg" },
-  { h3: "Fully Stocked & Maintained", src: "/stocked.svg" },
-  { h3: "Top Brands & Fast Restocking", src: "/fast.svg" },
-  { h3: "No Cost to You – Ever", src: "/free.svg" },
   {
-    h3: "Monthly Commission / Profit Share for You!",
+    h3: "Convenience",
+    src: "/move.svg",
+    h4: "No cost, no maintenance, no hassle",
+  },
+  {
+    h3: "Employee Perk",
+    src: "/food.svg",
+    h4: "Boost workplace satisfaction with snacks, drinks, and healthy options",
+  },
+  {
+    h3: "Smart Tech",
+    src: "/smart.svg",
+    h4: "Cashless, 24/7 access, and real-time restocking",
+  },
+  {
+    h3: "Revenue Sharing",
     src: "/profit_share.svg",
+    h4: "Turn your unused space into a passive income stream",
   },
 ];
 
@@ -20,7 +32,7 @@ export default function Features() {
             Why Choose <span>ADN Vending</span>?
           </h2>
           <p>
-            {`We're a local provider offering professional, hands-free vending
+            {`We're a local, family-owned provider offering professional, hands-free vending
             services with full transparency. You provide the space – we handle
             the rest.`}
           </p>
@@ -28,10 +40,11 @@ export default function Features() {
         <div className={styles["feature-grid"]}>
           {features.map((feature, index) => (
             <div key={index} className={styles["feature-item"]}>
+              <h3>{feature.h3}</h3>
               <div className={styles["feature-icon"]}>
                 <img src={feature.src} alt="" />
               </div>
-              <h3>{feature.h3}</h3>
+              <h4>{feature.h4}</h4>
             </div>
           ))}
         </div>

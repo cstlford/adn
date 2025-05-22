@@ -34,9 +34,9 @@
   padding: 20px;
   background: linear-gradient(145deg, var(--dark-charcoal), var(--off-black));
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  margin: 20px;
+
   overflow: hidden;
+
   position: relative;
 }
 

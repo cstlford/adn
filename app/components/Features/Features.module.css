@@ -15,8 +15,9 @@
 }
 
 .feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+  display: flex;
+  flex-wrap: wrap;
+
   gap: 40px;
   justify-content: center;
   width: 100%;
@@ -26,6 +27,7 @@
 
 .feature-item {
   background-color: var(--deep-teal);
+  width: 400px;
   border-radius: 8px;
   padding: 30px;
   border-left: 4px solid var(--accent);
@@ -41,7 +43,7 @@
 }
 
 .feature-item h3 {
-  color: var(--silver);
+  color: white;
   margin-bottom: 15px;
 }
 
