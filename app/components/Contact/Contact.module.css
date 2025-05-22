@@ -1,6 +1,6 @@
 /* Contact Section */
 .contact {
-  background-color: var(--gunmetal);
+  background: linear-gradient(135deg, var(--gunmetal), #30424a);
   text-align: center;
 }
 

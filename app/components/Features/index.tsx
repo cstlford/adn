@@ -7,14 +7,14 @@ const features = [
     h4: "No cost, no maintenance, no hassle",
   },
   {
-    h3: "Employee Perk",
+    h3: "Employee Experience",
     src: "/food.svg",
     h4: "Boost workplace satisfaction with snacks, drinks, and healthy options",
   },
   {
     h3: "Smart Tech",
     src: "/smart.svg",
-    h4: "Cashless, 24/7 access, and real-time restocking",
+    h4: "Cashless, 24/7 access, and real-time inventory tracking",
   },
   {
     h3: "Revenue Sharing",
