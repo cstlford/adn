@@ -9,7 +9,7 @@ export default function Header() {
           <img src="/logo_inverted.png" alt="" />
         </Link>
         <div className={styles.navLinks}>
-          <Link href="#offering">Services</Link>
+          <Link href="#offering">Solutions</Link>
           <Link href="#features">Features</Link>
           <Link href="#contact">Contact</Link>
         </div>

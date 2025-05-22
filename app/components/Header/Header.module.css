@@ -1,9 +1,10 @@
 .header {
-  background-color: var(--off-black);
+  background: linear-gradient(0deg, #262626, var(--off-black));
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .header nav {

@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./page.css";
 import { Payload } from "./components/Contact";
+import Comparison from "./components/Comparison";
 
 export default function Home() {
   const handleSubmit = async (form: Payload) => {
@@ -33,6 +34,7 @@ export default function Home() {
       <main>
         <Hero />
         <Offering />
+        <Comparison />
         <Locations />
         <Features />
         <Contact onSubmit={handleSubmit} />
