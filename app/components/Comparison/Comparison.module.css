@@ -10,7 +10,7 @@
 }
 
 .title span {
-  color: var(--light-accent);
+  color: var(--accent);
 }
 
 .badgeWrapper {

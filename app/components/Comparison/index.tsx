@@ -1,6 +1,4 @@
 import styles from "./Comparison.module.css";
-import { motion } from "framer-motion";
-import { CheckCircle, XCircle } from "lucide-react";
 import VendingCard from "../VendingCard";
 
 export type card = {
@@ -21,7 +19,6 @@ const cards = [
       "Static prices",
       "Old-fashioned payment",
       "Not customer friendly",
-      "Low revenue",
     ],
     type: "traditional",
   },
@@ -34,8 +31,7 @@ const cards = [
       "Data to sell more",
       "Dynamic prices",
       "Contactless payment",
-      "Enhanced experience",
-      "High revenue",
+      "Enhanced customer experience",
     ],
     type: "modern",
   },
