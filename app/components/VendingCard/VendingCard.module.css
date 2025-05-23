@@ -5,12 +5,10 @@
   overflow: hidden;
   transition: transform 0.2s ease;
   display: flex;
-  flex-direction: row;
-  gap: 8px;
+  gap: 16px;
   padding: 16px;
-  justify-content: space-between;
-  max-width: 600px;
-  justify-self: center;
+
+  min-height: 200px;
 }
 
 .card:hover {
@@ -18,11 +16,11 @@
 }
 
 .image {
-  width: clamp(120px, 50%, 400px);
-  min-width: 120px;
+  width: clamp(120px, 40%, 250px);
   height: auto;
   object-fit: contain;
-  object-position: center;
+  max-height: 200px;
+  border-radius: 0.5rem;
   flex-shrink: 0;
 }
 
@@ -31,6 +29,8 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  justify-content: flex-start;
+  align-content: space-between;
 }
 
 .title {
@@ -51,37 +51,58 @@
   line-height: 1.4;
 }
 
-.feature span {
-  word-break: break-word;
+.feature:last-child {
+  margin-bottom: 0;
 }
 
-@media screen and (max-width: 900px) {
-  .card {
-    gap: 14px;
-    padding: 14px;
-  }
-}
-
-@media screen and (max-width: 700px) {
+/* Mobile responsiveness */
+@media (max-width: 768px) {
   .card {
     gap: 12px;
     padding: 12px;
+    min-height: auto;
+  }
+
+  .image {
+    width: clamp(100px, 35%, 180px);
+    max-height: 160px;
+    object-fit: contain;
+  }
+
+  .body {
+    gap: 8px;
+  }
+
+  .title {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
   }
 
   .feature {
-    gap: 0.4rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
   }
 }
 
-@media screen and (max-width: 500px) {
-  .image {
-    width: clamp(100px, 35%, 150px);
-    min-width: 100px;
+@media (max-width: 480px) {
+  .card {
+    gap: 8px;
+    padding: 8px;
   }
 
-  .card {
-    gap: 10px;
-    padding: 10px;
+  .image {
+    width: clamp(80px, 30%, 120px);
+    max-height: 120px;
+    object-fit: contain;
+  }
+
+  .title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature {
+    gap: 0.375rem;
+    margin-bottom: 0.375rem;
   }
 }
