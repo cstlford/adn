@@ -1,4 +1,9 @@
 /* Features Section */
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .features .intro {
   text-align: center;
