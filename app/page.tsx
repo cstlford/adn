@@ -9,22 +9,38 @@ import Footer from "./components/Footer";
 import "./page.css";
 import { Payload } from "./components/Contact";
 import Comparison from "./components/Comparison";
+import { useState } from "react";
 
 export default function Home() {
-  const handleSubmit = async (form: Payload) => {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify(form),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<null | string>(null);
+  const [success, setSuccess] = useState(false);
 
-    const data = await res.json();
-    if (data.success) {
-      alert("Message sent!");
-    } else {
-      alert("Something went wrong. Please try again.");
+  const handleSubmit = async (form: Payload) => {
+    setLoading(true);
+    setError(null);
+    setSuccess(false);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(form),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setSuccess(true);
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.error(err);
+      setError("Network error. Please try again later.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -37,7 +53,12 @@ export default function Home() {
         <Comparison />
         <Locations />
         <Features />
-        <Contact onSubmit={handleSubmit} />
+        <Contact
+          onSubmit={handleSubmit}
+          isLoading={loading}
+          success={success}
+          error={error}
+        />
       </main>
       <Footer />
     </>

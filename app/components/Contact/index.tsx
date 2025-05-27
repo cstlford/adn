@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import styles from "./Contact.module.css";
+import { div, p } from "framer-motion/client";
 
 export type Payload = {
   name: string;
@@ -12,9 +13,17 @@ export type Payload = {
 
 interface Props {
   onSubmit: (form: Payload) => void;
+  isLoading: boolean;
+  error: string | null;
+  success: boolean;
 }
 
-export default function Contact({ onSubmit }: Props) {
+export default function Contact({
+  onSubmit,
+  isLoading,
+  error,
+  success,
+}: Props) {
   const [isInView, setIsInView] = useState(false);
   const headingRef = useRef(null);
   const [form, setForm] = useState({
@@ -147,9 +156,15 @@ export default function Contact({ onSubmit }: Props) {
             </div>
             <div className={styles["btn-container"]}>
               <button type="submit" className="cta-button accent-button">
-                Send Message
+                {isLoading ? (
+                  <div className={styles.spinner} />
+                ) : (
+                  "Send Message"
+                )}
               </button>
             </div>
+            {error && <p className={styles.error}>{error}</p>}
+            {success && <p className={styles.success}>Message sent!</p>}
           </form>
         </div>
       </div>

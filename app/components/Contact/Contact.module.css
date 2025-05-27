@@ -88,3 +88,31 @@
 .underlineVisible::after {
   width: 100%;
 }
+
+.success,
+.error {
+  text-align: center;
+  padding-top: 16px;
+}
+
+.success {
+  color: rgb(72, 207, 72);
+}
+.error {
+  color: rgb(203, 12, 12);
+}
+
+.spinner {
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

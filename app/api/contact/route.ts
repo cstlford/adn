@@ -39,7 +39,7 @@ export async function POST(req: Request) {
   try {
     await transporter.sendMail({
       from: process.env.SMTP_USER,
-      to: "cstlford@gmail.com",
+      to: process.env.SMTP_USER,
       subject: `New Contact from ${name}`,
       text: `Message: ${message} \n\nEmail: ${email} \nPhone: ${phone} \nCompany: ${company}`, // Fallback
       html: `

@@ -3,8 +3,8 @@ main {
     180deg,
     var(--off-black) 13%,
     var(--deeper-teal) 25%,
-    var(--gunmetal) 45%,
-    var(--off-black) 65%,
+    var(--off-black) 45%,
+    var(--off-black) 75%,
     var(--deeper-teal) 100%
   );
 }
