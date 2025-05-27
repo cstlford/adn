@@ -15,6 +15,8 @@ interface Props {
 }
 
 export default function Contact({ onSubmit }: Props) {
+  const [isInView, setIsInView] = useState(false);
+  const headingRef = useRef(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -39,20 +41,17 @@ export default function Contact({ onSubmit }: Props) {
     setForm({ name: "", email: "", company: "", phone: "", message: "" });
   };
 
-  const [isInView, setIsInView] = useState(false);
-  const headingRef = useRef(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsInView(true);
-          // Stop observing after animation triggers
+
           observer.unobserve(entry.target);
         }
       },
       {
-        threshold: 0.6, // Trigger when 60% of heading is visible
+        threshold: 0.6,
         rootMargin: "0px 0px -20px 0px",
       }
     );
@@ -141,6 +140,7 @@ export default function Contact({ onSubmit }: Props) {
                 onChange={handleChange}
                 className={styles["form-control"]}
                 rows={5}
+                maxLength={2000}
                 placeholder="Tell us about your space or any questions you have..."
                 required
               ></textarea>
