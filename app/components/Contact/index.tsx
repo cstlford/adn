@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import styles from "./Contact.module.css";
-import { div, p } from "framer-motion/client";
 
 export type Payload = {
   name: string;
